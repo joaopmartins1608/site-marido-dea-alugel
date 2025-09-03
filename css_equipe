@@ -1,0 +1,175 @@
+/* Variáveis para cores e espaçamento */
+:root {
+    --primary-color: #5d5dff;
+    --text-color: #333;
+    --bg-color: #f0f2f5;
+    --card-bg: #fff;
+    --sidebar-bg: #1e2a3a;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos de corpo e layout geral */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Barra lateral) - Estilos reutilizados da página anterior */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: #ddd;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #ddd;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li a:hover {
+    background-color: #3c4b5d;
+}
+
+.navigation .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    background-color: #ddd;
+}
+
+.logout {
+    text-align: center;
+    margin-top: auto;
+}
+
+.logout a {
+    color: #ff6b6b;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.logout a:hover {
+    background-color: #3c4b5d;
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.header {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+/* Seção de cartões da equipe */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.member-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-initials {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    color: var(--card-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.member-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+
+.member-role {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.member-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+}
+
+.status-online {
+    color: #28a745;
+    background-color: #d4edda;
+}
+
+.status-offline {
+    color: #dc3545;
+    background-color: #f8d7da;
+}
