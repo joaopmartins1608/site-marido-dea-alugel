@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Equipe</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="equipe.css">
+    <!-- Link para a biblioteca de ícones Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>AdminPRO</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i data-feather="home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="briefcase"></i>
+                            Profissões
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">
+                            <i data-feather="users"></i>
+                            Equipe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="file-text"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="settings"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">
+                    <i data-feather="log-out"></i> Sair
+                </a>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header class="header">
+                <h2>Gestão de Equipe</h2>
+                <p>Visualize os membros da sua equipe, suas funções e a carga de trabalho atual. Esta seção ajuda a distribuir tarefas de forma equilibrada e a entender as responsabilidades de cada colaborador.</p>
+            </header>
+
+            <section class="team-grid" id="team-grid">
+                <!-- Os cartões dos membros serão injetados aqui pelo JavaScript -->
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Script para a biblioteca de ícones e o JS externo -->
+    <script>
+        feather.replace();
+    </script>
+    <script src="equipe.js"></script>
+
+</body>
+</html>
