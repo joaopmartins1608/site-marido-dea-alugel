@@ -1,0 +1,108 @@
+// Dados de exemplo para os cards e gráficos
+const data = {
+    monthlyRevenue: 45850,
+    newClients: 12,
+    budgetsMade: 35,
+    activeProjects: 8,
+    servicesCompleted: 25,
+    servicesNotCompleted: 10,
+    monthlyRevenueData: [25000, 28000, 30000, 35000, 38000, 42000, 45000, 48000, 50000, 52000, 55000],
+    servicesStatusData: [
+        { label: 'Serviços Pendentes', value: 25, color: '#3498db' },
+        { label: 'Serviços Realizados', value: 25, color: '#2ecc71' },
+        { label: 'Serviço Não Feitos', value: 10, color: '#e74c3c' },
+        { label: 'Orçamentos Rejeitados', value: 15, color: '#f39c12' },
+        { label: 'Orçamentos Aceitos', value: 20, color: '#9b59b6' }
+    ]
+};
+
+// Função para atualizar os cards com os dados
+function updateCards() {
+    document.getElementById('monthly-revenue').textContent = `R$ ${data.monthlyRevenue.toLocaleString('pt-BR')}`;
+    document.getElementById('new-clients').textContent = `+${data.newClients}`;
+    document.getElementById('budgets-made').textContent = data.budgetsMade;
+    document.getElementById('active-projects').textContent = data.activeProjects;
+    document.getElementById('services-completed').textContent = data.servicesCompleted;
+    document.getElementById('services-not-completed').textContent = data.servicesNotCompleted;
+}
+
+// Função para criar o gráfico de barras
+function createBarChart() {
+    const canvas = document.getElementById('monthly-revenue-chart');
+    const ctx = canvas.getContext('2d');
+    const labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov'];
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Faturamento Mensal',
+                data: data.monthlyRevenueData,
+                backgroundColor: '#3498db',
+                borderRadius: 5,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+// Função para criar o gráfico de pizza
+function createPieChart() {
+    const canvas = document.getElementById('services-status-chart');
+    const ctx = canvas.getContext('2d');
+    
+    const labels = data.servicesStatusData.map(d => d.label);
+    const values = data.servicesStatusData.map(d => d.value);
+    const colors = data.servicesStatusData.map(d => d.color);
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: colors,
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        boxWidth: 20,
+                        boxHeight: 20,
+                        useBorderRadius: true,
+                        borderRadius: 5
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Importa a biblioteca Chart.js e inicializa a página
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+script.onload = () => {
+    updateCards();
+    createBarChart();
+    createPieChart();
+};
+document.head.appendChild(script);
