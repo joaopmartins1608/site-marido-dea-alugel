@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios e Análises</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="relatorios.css">
+    <!-- Link para a biblioteca de ícones Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>AdminPRO</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i data-feather="home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="briefcase"></i>
+                            Profissões
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="users"></i>
+                            Equipe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">
+                            <i data-feather="file-text"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="settings"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">
+                    <i data-feather="log-out"></i> Sair
+                </a>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header class="header">
+                <h2 class="section-title">Relatórios e Análises</h2>
+                <p class="section-description">Gere relatórios detalhados para obter insights valiosos sobre as operações da sua empresa. Selecione o tipo de relatório e o período desejado para analisar o desempenho e tomar decisões baseadas em dados.</p>
+            </header>
+
+            <section class="report-card">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="report-type">Tipo de Relatório</label>
+                        <select id="report-type">
+                            <option value="produtividade-equipe">Produtividade da Equipe</option>
+                            <option value="orcamentos-realizados">Orçamentos Realizados</option>
+                            <option value="servicos-pendentes">Serviços Pendentes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Data de Início</label>
+                        <input type="date" id="start-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">Data de Fim</label>
+                        <input type="date" id="end-date">
+                    </div>
+                </div>
+                <button class="btn-generate" id="generate-btn">Gerar Relatório</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script para a biblioteca de ícones e o JS externo -->
+    <script>
+        feather.replace();
+    </script>
+    <script src="relatorios.js"></script>
+
+</body>
+</html>
