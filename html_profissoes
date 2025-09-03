@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Profissões</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="profissoes.css">
+    <!-- Link para a biblioteca de ícones Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>AdminPRO</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i data-feather="home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">
+                            <i data-feather="briefcase"></i>
+                            Profissões
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="users"></i>
+                            Equipe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="file-text"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="settings"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">
+                    <i data-feather="log-out"></i> Sair
+                </a>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header class="header">
+                <h2>Gestão de Profissões</h2>
+                <p>Organize, atribua e acompanhe todas as atividades da sua equipe. Utilize filtros para encontrar profissões/ profissional/ serviço específicos e monitore o progresso de cada tarefa para garantir que os prazos sejam cumpridos.</p>
+            </header>
+
+            <section class="controls-section">
+                <div class="search-filter-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Pesquisar por profissão/profi">
+                    <select id="status-filter" class="filter-select">
+                        <option value="todos">Filtrar por Status</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select>
+                </div>
+            </section>
+
+            <section id="profession-list" class="profession-list">
+                <!-- Os cartões de profissão serão injetados aqui pelo JavaScript -->
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Script para a biblioteca de ícones e o JS externo -->
+    <script>
+      feather.replace();
+    </script>
+    <script src="profissoes.js"></script>
+
+</body>
+</html>
