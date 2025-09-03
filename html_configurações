@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="configuracoes.css">
+    <!-- Link para a biblioteca de ícones Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>AdminPRO</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i data-feather="home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="briefcase"></i>
+                            Profissões
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="users"></i>
+                            Equipe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="file-text"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">
+                            <i data-feather="settings"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">
+                    <i data-feather="log-out"></i> Sair
+                </a>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header class="header">
+                <h2 class="section-title">Configurações</h2>
+                <p class="section-description">Personalize as configurações da sua conta e da sua empresa. Aqui você pode gerenciar usuários, alterar permissões e ajustar as informações gerais do sistema para que ele se adapte perfeitamente às suas necessidades.</p>
+            </header>
+
+            <section class="config-card">
+                <div class="config-item" data-toggle-id="password-section">
+                    <div class="config-item-header">
+                        <span class="label">Mudar Senha</span>
+                        <i data-feather="chevron-right" class="icon-right"></i>
+                    </div>
+                </div>
+                <div class="config-item" data-toggle-id="email-section">
+                    <div class="config-item-header">
+                        <span class="label">Mudar E-mail</span>
+                        <i data-feather="chevron-right" class="icon-right"></i>
+                    </div>
+                </div>
+                <div class="config-item has-details" data-toggle-id="customize-section">
+                    <div class="config-item-header">
+                        <span class="label">Customizar</span>
+                        <i data-feather="chevron-down" class="icon-right"></i>
+                    </div>
+                    <div class="details" id="customize-section">
+                        <select>
+                            <option>Índigo (Padrão)</option>
+                            <option>Azul</option>
+                            <option>Verde</option>
+                            <option>Vermelho</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script para a biblioteca de ícones e o JS externo -->
+    <script>
+        feather.replace();
+    </script>
+    <script src="configuracoes.js"></script>
+
+</body>
+</html>
