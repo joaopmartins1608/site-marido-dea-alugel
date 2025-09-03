@@ -1,0 +1,222 @@
+/* Variáveis para cores e espaçamento */
+:root {
+    --primary-color: #5d5dff;
+    --secondary-color: #e0e0f8;
+    --text-color: #333;
+    --bg-color: #f0f2f5;
+    --card-bg: #fff;
+    --sidebar-bg: #1e2a3a;
+    --sidebar-text: #ddd;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos de corpo e layout geral */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Barra lateral) */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li a:hover {
+    background-color: #3c4b5d;
+}
+
+.navigation .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    background-color: var(--sidebar-text);
+}
+
+.logout {
+    text-align: center;
+    margin-top: auto;
+}
+
+.logout a {
+    color: #ff6b6b;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.logout a:hover {
+    background-color: #3c4b5d;
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.header {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+/* Barra de pesquisa e filtro */
+.search-filter-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg);
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666" width="18px" height="18px"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    cursor: pointer;
+}
+
+/* Lista de profissões */
+.profession-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profession-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.card-header .icon {
+    width: 20px;
+    height: 20px;
+    background-color: #666;
+    border-radius: 50%;
+}
+
+.card-header .chevron {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.card-header .chevron.expanded {
+    transform: rotate(180deg);
+}
+
+.member-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.member-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    color: #555;
+}
+
+.member-list li:first-child {
+    padding-top: 0;
+}
+
+.member-list .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+    background-color: #999;
+}
