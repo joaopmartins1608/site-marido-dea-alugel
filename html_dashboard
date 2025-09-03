@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPRO</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>AdminPRO</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="icon"></div>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"></div>
+                            Profissões
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"></div>
+                            Equipe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"></div>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"></div>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">Sair</a>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header class="header">
+                Boa noite, Usuário.
+            </header>
+
+            <section class="dashboard-overview">
+                <h2>Painel de Visão Geral</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="icon"></div>
+                        <div class="text">
+                            <h3>Faturamento do Mês</h3>
+                            <p>R$ 45.850</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"></div>
+                        <div class="text">
+                            <h3>Novos Clientes</h3>
+                            <p>+12</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"></div>
+                        <div class="text">
+                            <h3>Orçamentos Feitos</h3>
+                            <p>35</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"></div>
+                        <div class="text">
+                            <h3>Projetos Ativos</h3>
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"></div>
+                        <div class="text">
+                            <h3>Serviços Realizados</h3>
+                            <p>25</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"></div>
+                        <div class="text">
+                            <h3>Serviços Não Realizados</h3>
+                            <p>10</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-container">
+                <div class="chart-card">
+                    <h3>Faturamento Mensal</h3>
+                    <div class="chart-placeholder">
+                        <!-- O gráfico de barras seria renderizado aqui -->
+                                            </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Status de Serviços e Orçamentos</h3>
+                    <div class="chart-placeholder">
+                        <!-- O gráfico de pizza seria renderizado aqui -->
+                                            </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
