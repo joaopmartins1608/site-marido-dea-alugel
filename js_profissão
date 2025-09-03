@@ -1,0 +1,99 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Dados de exemplo para as profissões e membros
+    const professionsData = [
+        {
+            name: "Eletricista",
+            members: [
+                { name: "João Silva", status: "Ativo" },
+                { name: "Maria Souza", status: "Inativo" }
+            ]
+        },
+        {
+            name: "Encanador",
+            members: [
+                { name: "Pedro Lima", status: "Ativo" },
+                { name: "Mariana Oliveira", status: "Inativo" }
+            ]
+        },
+        {
+            name: "Pintor",
+            members: [
+                { name: "Julia Ramos", status: "Ativo" },
+                { name: "Ricardo Nogueira", status: "Ativo" }
+            ]
+        },
+        {
+            name: "Jardineiro",
+            members: [
+                { name: "Rafaela Castro", status: "Ativo" },
+                { name: "Fernando Costa", status: "Inativo" }
+            ]
+        }
+    ];
+
+    const professionList = document.getElementById('profession-list');
+    const searchInput = document.getElementById('search-input');
+    const statusFilter = document.getElementById('status-filter');
+
+    // Função para renderizar os cartões de profissão
+    function renderProfessions(data) {
+        professionList.innerHTML = '';
+        data.forEach(profession => {
+            const card = document.createElement('div');
+            card.className = 'profession-card';
+            card.setAttribute('data-profession', profession.name.toLowerCase());
+
+            const header = document.createElement('div');
+            header.className = 'card-header';
+            header.innerHTML = `
+                <h3>${profession.name}</h3>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            `;
+            header.addEventListener('click', () => {
+                const membersList = card.querySelector('.member-list');
+                const chevron = card.querySelector('.chevron');
+                membersList.classList.toggle('expanded');
+                chevron.classList.toggle('expanded');
+            });
+            card.appendChild(header);
+
+            const membersList = document.createElement('ul');
+            membersList.className = 'member-list';
+            membersList.classList.add('expanded'); // Deixa a lista de membros expandida por padrão
+            profession.members.forEach(member => {
+                const memberItem = document.createElement('li');
+                memberItem.innerHTML = `<div class="icon"></div><span>${member.name}</span>`;
+                membersList.appendChild(memberItem);
+            });
+            card.appendChild(membersList);
+            
+            professionList.appendChild(card);
+        });
+    }
+
+    // Função para filtrar a lista de profissões
+    function filterProfessions() {
+        const searchText = searchInput.value.toLowerCase();
+        const filterStatus = statusFilter.value.toLowerCase();
+
+        const filteredData = professionsData.filter(profession => {
+            const matchesSearch = profession.name.toLowerCase().includes(searchText);
+            
+            const matchesStatus = filterStatus === 'todos' || profession.members.some(member => 
+                member.status.toLowerCase() === filterStatus);
+
+            return matchesSearch && matchesStatus;
+        });
+
+        renderProfessions(filteredData);
+    }
+
+    // Adiciona event listeners para a pesquisa e o filtro
+    searchInput.addEventListener('input', filterProfessions);
+    statusFilter.addEventListener('change', filterProfessions);
+
+    // Renderiza os cartões inicialmente
+    renderProfessions(professionsData);
+});
