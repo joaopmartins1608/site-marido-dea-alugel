@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdminPRO</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -66,42 +68,42 @@
                         <div class="icon"></div>
                         <div class="text">
                             <h3>Faturamento do Mês</h3>
-                            <p>R$ 45.850</p>
+                            <p id="monthly-revenue">R$ 0</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="icon"></div>
                         <div class="text">
                             <h3>Novos Clientes</h3>
-                            <p>+12</p>
+                            <p id="new-clients">0</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="icon"></div>
                         <div class="text">
                             <h3>Orçamentos Feitos</h3>
-                            <p>35</p>
+                            <p id="budgets-made">0</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="icon"></div>
                         <div class="text">
                             <h3>Projetos Ativos</h3>
-                            <p>8</p>
+                            <p id="active-projects">0</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="icon"></div>
                         <div class="text">
                             <h3>Serviços Realizados</h3>
-                            <p>25</p>
+                            <p id="services-completed">0</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="icon"></div>
                         <div class="text">
                             <h3>Serviços Não Realizados</h3>
-                            <p>10</p>
+                            <p id="services-not-completed">0</p>
                         </div>
                     </div>
                 </div>
@@ -111,19 +113,22 @@
                 <div class="chart-card">
                     <h3>Faturamento Mensal</h3>
                     <div class="chart-placeholder">
-                        <!-- O gráfico de barras seria renderizado aqui -->
-                                            </div>
+                        <canvas id="monthly-revenue-chart"></canvas>
+                    </div>
                 </div>
                 <div class="chart-card">
                     <h3>Status de Serviços e Orçamentos</h3>
                     <div class="chart-placeholder">
-                        <!-- O gráfico de pizza seria renderizado aqui -->
-                                            </div>
+                        <canvas id="services-status-chart"></canvas>
+                    </div>
                 </div>
             </section>
 
         </main>
     </div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
 
 </body>
 </html>
