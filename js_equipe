@@ -1,0 +1,43 @@
+// Dados de exemplo para os membros da equipe
+const teamMembers = [
+    { name: "João Silva", role: "Eletricista", status: "Online" },
+    { name: "Maria Souza", role: "Eletricista", status: "Offline" },
+    { name: "Pedro Lima", role: "Encanador", status: "Online" },
+    { name: "Mariana Oliveira", role: "Encanador", status: "Offline" },
+    { name: "Julia Ramos", role: "Pintor", status: "Online" },
+    { name: "Ricardo Nogueira", role: "Pintor", status: "Online" },
+    { name: "Rafaela Castro", role: "Jardineiro", status: "Offline" },
+    { name: "Fernando Costa", role: "Jardineiro", status: "Offline" }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const teamGrid = document.getElementById('team-grid');
+
+    // Função para obter as iniciais de um nome
+    const getInitials = (name) => {
+        return name.split(' ').map(n => n[0]).join('').toUpperCase();
+    };
+
+    // Função para renderizar os cartões dos membros
+    const renderTeamMembers = (members) => {
+        teamGrid.innerHTML = ''; // Limpa o conteúdo anterior
+        members.forEach(member => {
+            const memberCard = document.createElement('div');
+            memberCard.classList.add('member-card');
+
+            const initials = getInitials(member.name);
+            const statusClass = member.status.toLowerCase() === 'online' ? 'status-online' : 'status-offline';
+
+            memberCard.innerHTML = `
+                <div class="member-initials">${initials}</div>
+                <h3 class="member-name">${member.name}</h3>
+                <p class="member-role">${member.role}</p>
+                <span class="member-status ${statusClass}">${member.status}</span>
+            `;
+            teamGrid.appendChild(memberCard);
+        });
+    };
+
+    // Chama a função para renderizar os membros quando a página carregar
+    renderTeamMembers(teamMembers);
+});
